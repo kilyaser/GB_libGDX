@@ -13,6 +13,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img;
 	Texture imgAim;
+	int countClick;
 
 	
 	@Override
@@ -30,6 +31,8 @@ public class MyGdxGame extends ApplicationAdapter {
 
 		float x = Gdx.input.getX() - imgAim.getWidth()/2;
 		float y = Gdx.graphics.getHeight() - Gdx.input.getY() - imgAim.getHeight()/2;
+		if(Gdx.input.isButtonJustPressed(Input.Buttons.LEFT)) countClick++;
+		Gdx.graphics.setTitle("Clicked " + countClick+ " times");
 
 		batch.begin();
 		batch.draw(img, 0, 0);
