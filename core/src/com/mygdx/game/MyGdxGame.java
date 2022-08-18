@@ -5,45 +5,45 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Cursor;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g3d.particles.ParticleSorter;
 import com.badlogic.gdx.utils.ScreenUtils;
 
 public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
-	Texture img;
-	Texture imgAim;
-	int countClick;
+	MyAnimation myAnimation;
+	boolean dir;
+	float time;
 
 	
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");
-		imgAim = new Texture("aim.png");
-		Gdx.graphics.setSystemCursor(Cursor.SystemCursor.None);
-
+		myAnimation = new MyAnimation("monster.png", 8, 3, Animation.PlayMode.LOOP);
 	}
 
 	@Override
 	public void render () {
-		ScreenUtils.clear(1, 0, 0, 1);
+		ScreenUtils.clear(1, 1, 1, 1);
+		time += Gdx.graphics.getDeltaTime();
+		myAnimation.setTime(time);
+		//float x = Gdx.input.getX() - myAnimation.getFrame().getRegionWidth() / 2;
+		//float y = Gdx.graphics.getHeight() - Gdx.input.getY() - myAnimation.getFrame().getRegionHeight() / 2 ;
 
-		float x = Gdx.input.getX() - imgAim.getWidth()/2;
-		float y = Gdx.graphics.getHeight() - Gdx.input.getY() - imgAim.getHeight()/2;
-		if(Gdx.input.isButtonJustPressed(Input.Buttons.LEFT)) countClick++;
-		Gdx.graphics.setTitle("Clicked " + countClick+ " times");
-
+		if(Gdx.input.isButtonJustPressed(Input.Keys.L)) dir = true;
+		if(Gdx.input.isButtonJustPressed(Input.Keys.R)) dir = false;
+		if(!myAnimation.getFrame().isFlipX() && !dir) myAnimation.getFrame().flip(true, false);
+		if(myAnimation.getFrame().isFlipX() && dir) myAnimation.getFrame().flip(false, false);
 		batch.begin();
-		batch.draw(img, 0, 0);
-		batch.draw(imgAim, x, y);
+		batch.draw(myAnimation.getFrame(), 0, 0);
 		batch.end();
 	}
 	
 	@Override
 	public void dispose () {
 		batch.dispose();
-		img.dispose();
-		imgAim.dispose();
+		myAnimation.dispose();
+
 	}
 }
