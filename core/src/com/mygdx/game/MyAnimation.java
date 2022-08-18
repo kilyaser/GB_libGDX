@@ -9,6 +9,8 @@ public class MyAnimation {
     private Texture img;
     private Animation<TextureRegion> animation;
     private float time;
+    private int xPosition = 0;
+    private int yPosition = 0;
 
     public MyAnimation(String name, int col, int row, Animation.PlayMode playMode){
         img = new Texture(name);
@@ -45,5 +47,17 @@ public class MyAnimation {
     }
     public void dispose(){
         img.dispose();
+    }
+    public int getX(){
+        return xPosition;
+    }
+    public  int getY(){
+        return yPosition;
+    }
+    public void incrementX(){
+        this.xPosition++;
+    }
+    public void decrementX(){
+        this.xPosition--;
     }
 }

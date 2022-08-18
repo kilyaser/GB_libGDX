@@ -8,13 +8,16 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g3d.particles.ParticleSorter;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.actions.MoveToAction;
 import com.badlogic.gdx.utils.ScreenUtils;
 
 public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
 	MyAnimation myAnimation;
-	boolean dir;
 	float time;
+	boolean rotation = true;
+
 
 	
 	@Override
@@ -31,17 +34,35 @@ public class MyGdxGame extends ApplicationAdapter {
 		//float x = Gdx.input.getX() - myAnimation.getFrame().getRegionWidth() / 2;
 		//float y = Gdx.graphics.getHeight() - Gdx.input.getY() - myAnimation.getFrame().getRegionHeight() / 2 ;
 
-		if(Gdx.input.isButtonJustPressed(Input.Keys.L)) dir = true;
-		if(Gdx.input.isButtonJustPressed(Input.Keys.R)) dir = false;
-		if(!myAnimation.getFrame().isFlipX() && !dir) myAnimation.getFrame().flip(true, false);
-		if(myAnimation.getFrame().isFlipX() && dir) myAnimation.getFrame().flip(false, false);
+		//if(Gdx.input.isButtonJustPressed(Input.Keys.L)) dir = true;
+		//if(Gdx.input.isButtonJustPressed(Input.Keys.R)) dir = false;
+		if(myAnimation.getFrame().isFlipX()) myAnimation.getFrame().flip(!rotation, false);
+		if(!myAnimation.getFrame().isFlipX()) myAnimation.getFrame().flip(rotation, false);
+
 		batch.begin();
-		batch.draw(myAnimation.getFrame(), 0, 0);
+		batch.draw(myAnimation.getFrame(), myAnimation.getX(), myAnimation.getY());
+
+		if(rotation){
+			myAnimation.incrementX();
+			if(Gdx.graphics.getWidth() - (myAnimation.getX() + myAnimation.getX()/2) < 0){
+				rotation =false;
+
+			}
+		}
+		if(!rotation) {
+			myAnimation.decrementX();
+			if((myAnimation.getX() - myAnimation.getX()/2) < 0){
+
+				rotation = true;
+
+			}
+
+		}
 		batch.end();
 	}
 	
 	@Override
-	public void dispose () {
+	public void dispose() {
 		batch.dispose();
 		myAnimation.dispose();
 
