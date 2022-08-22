@@ -29,6 +29,7 @@ public class MyAnimation {
         animation.setPlayMode(playMode);
 
         time += Gdx.graphics.getDeltaTime();
+
     }
 
 
