@@ -111,5 +111,7 @@ public class GameScreen implements Screen {
     public void dispose() {
         this.batch.dispose();
         this.myAnimation.dispose();
+        this.atlasQuit.dispose();
+        this.shapeRenderer.dispose();
     }
 }
