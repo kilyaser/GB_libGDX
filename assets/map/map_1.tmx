@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.9" tiledversion="1.9.1" orientation="orthogonal" renderorder="right-down" width="66" height="21" tilewidth="32" tileheight="32" infinite="0" nextlayerid="4" nextobjectid="6">
+ <tileset firstgid="1" name="TileSetVX___Global_4" tilewidth="32" tileheight="32" tilecount="2016" columns="32">
+  <image source="TileSetVX___Global_4.png" width="1024" height="2016"/>
+  <tile id="1113">
+   <animation>
+    <frame tileid="1023" duration="100"/>
+    <frame tileid="1055" duration="100"/>
+    <frame tileid="1087" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="1292">
+   <animation>
+    <frame tileid="1862" duration="100"/>
+    <frame tileid="1862" duration="100"/>
+    <frame tileid="1862" duration="100"/>
+    <frame tileid="1862" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="1714">
+   <animation>
+    <frame tileid="1855" duration="100"/>
+    <frame tileid="1823" duration="100"/>
+    <frame tileid="1854" duration="100"/>
+   </animation>
+  </tile>
+ </tileset>
+ <layer id="1" name="Слой тайлов 1" width="66" height="21">
+  <data encoding="base64" compression="zlib">
+   eJzt0EsKgDAMRdFMqjN1IrgRwXW6YgciaNCafrAF74E3a0ryRAAAAAAAf9E1Ir0nQ1N6w3drGzc3q/iMp9RocntC6Q5Ceqipk+N+aw93d+foQfdheZNK327pwXJ/zh5887E7aot7TujfJXuI2e3LpPRgCa424Gkb9A==
+  </data>
+ </layer>
+ <layer id="2" name="Анимация" width="66" height="21">
+  <data encoding="base64" compression="zlib">
+   eJzt1MEJgDAMheGA1kzgDO6iE+gmHp3AUXrU8RQCWiqeKpYm74dAL4HyHUJkp6Uh6llm4Ny/ydda3e82GkuFDmFwkOAgWXfYzlu5s12H+EbCAQ5wgAMcJDhIWhxGl7avxWFOdPBKHL4KDs/gQMSuHIepfp/UOjhcleLwVwfkNRa3
+  </data>
+ </layer>
+ <objectgroup id="3" name="camera_point">
+  <object id="1" name="camera" x="692" y="395">
+   <point/>
+  </object>
+  <object id="5" name="border" x="-3.0303" y="-3.0303" width="2109.09" height="651.515"/>
+ </objectgroup>
+</map>
