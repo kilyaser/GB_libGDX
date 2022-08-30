@@ -14,7 +14,7 @@ import com.badlogic.gdx.utils.ScreenUtils;
 
 public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
-	MyAnimation myAnimation;
+	//MyAnimation myAnimation;
 	float time;
 	boolean rotation = true;
 
@@ -23,48 +23,48 @@ public class MyGdxGame extends ApplicationAdapter {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		myAnimation = new MyAnimation("monster.png", 8, 3, Animation.PlayMode.LOOP);
+//		myAnimation = new MyAnimation("monster.png", 8, 3, Animation.PlayMode.LOOP);
 	}
 
 	@Override
 	public void render () {
 		ScreenUtils.clear(1, 1, 1, 1);
 		time += Gdx.graphics.getDeltaTime();
-		myAnimation.setTime(time);
+//		myAnimation.setTime(time);
 		//float x = Gdx.input.getX() - myAnimation.getFrame().getRegionWidth() / 2;
 		//float y = Gdx.graphics.getHeight() - Gdx.input.getY() - myAnimation.getFrame().getRegionHeight() / 2 ;
 
 		//if(Gdx.input.isButtonJustPressed(Input.Keys.L)) dir = true;
 		//if(Gdx.input.isButtonJustPressed(Input.Keys.R)) dir = false;
-		if(myAnimation.getFrame().isFlipX()) myAnimation.getFrame().flip(!rotation, false);
-		if(!myAnimation.getFrame().isFlipX()) myAnimation.getFrame().flip(rotation, false);
+//		if(myAnimation.getFrame().isFlipX()) myAnimation.getFrame().flip(!rotation, false);
+//		if(!myAnimation.getFrame().isFlipX()) myAnimation.getFrame().flip(rotation, false);
 
 		batch.begin();
-		batch.draw(myAnimation.getFrame(), myAnimation.getX(), myAnimation.getY());
+//		batch.draw(myAnimation.getFrame(), 0, 0);
 
-		if(rotation){
-			myAnimation.incrementX();
-			if(Gdx.graphics.getWidth() - (myAnimation.getX() + myAnimation.getX()/2) < 0){
-				rotation =false;
-
-			}
-		}
-		if(!rotation) {
-			myAnimation.decrementX();
-			if((myAnimation.getX() - myAnimation.getX()/2) < 0){
-
-				rotation = true;
-
-			}
-
-		}
+//		if(rotation){
+//			myAnimation.incrementX();
+//			if(Gdx.graphics.getWidth() - (myAnimation.getX() + myAnimation.getX()/2) < 0){
+//				rotation =false;
+//
+//			}
+//		}
+//		if(!rotation) {
+//			myAnimation.decrementX();
+//			if((myAnimation.getX() - myAnimation.getX()/2) < 0){
+//
+//				rotation = true;
+//
+//			}
+//
+//		}
 		batch.end();
 	}
 	
 	@Override
 	public void dispose() {
 		batch.dispose();
-		myAnimation.dispose();
+//		myAnimation.dispose();
 
 	}
 }

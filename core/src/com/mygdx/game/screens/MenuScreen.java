@@ -18,16 +18,16 @@ public class MenuScreen implements Screen {
     private Main game;
     private SpriteBatch batch;
     private Texture img;
-    private TextureAtlas atlas;
+    //private final TextureAtlas atlas;
     private Rectangle startRect;
     private ShapeRenderer shapeRenderer;
 
     public MenuScreen(Main game){
         this.game = game;
         batch = new SpriteBatch();
-        img = new Texture("battletoas.jpg");
-        atlas = new TextureAtlas("atlas/unnamed.atlas");
-        startRect = new Rectangle(0, 0, atlas.findRegion("play").getRegionWidth(), atlas.findRegion("play").getRegionHeight());
+        img = new Texture("logo.png");
+        //atlas = new TextureAtlas("atlas/unnamed.atlas");
+        startRect = new Rectangle(0, 0, 100, 50);
         shapeRenderer = new ShapeRenderer();
 
     }
@@ -41,7 +41,7 @@ public class MenuScreen implements Screen {
         ScreenUtils.clear(Color.BROWN);
         batch.begin();
         batch.draw(img, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-        batch.draw(atlas.findRegion("play"), 0, 0);
+       // batch.draw(atlas.findRegion("play"), 0, 0);
         batch.end();
 
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
@@ -85,6 +85,6 @@ public class MenuScreen implements Screen {
         this.batch.dispose();
         this.img.dispose();
         this.shapeRenderer.dispose();
-        this.atlas.dispose();
+       // this.atlas.dispose();
     }
 }
