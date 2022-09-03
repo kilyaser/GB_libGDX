@@ -12,10 +12,11 @@ public class MyAnimation {
     private Animation<TextureRegion> animation;
     private float time;
 
+
 //    private int xPosition = 0;
 //    private int yPosition = 0;
 
-    public MyAnimation(String name, Animation.PlayMode playMode){
+    public MyAnimation(String path, String name, Animation.PlayMode playMode){
 //        img = new Texture(name);
 //        TextureRegion region0 = new TextureRegion(img);
 //        int xCnt = region0.getRegionWidth() / col;
@@ -28,7 +29,8 @@ public class MyAnimation {
 //                regions[cnt++] = regions0[i][j];
 //            }
 //        }
-        atlas = new TextureAtlas("atlas/vervolfTS.atlas");
+
+        atlas = new TextureAtlas(path);
         animation = new Animation<TextureRegion>(1f/15, atlas.findRegions(name));
         animation.setPlayMode(playMode);
 
