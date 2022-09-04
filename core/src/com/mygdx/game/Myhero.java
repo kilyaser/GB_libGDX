@@ -5,6 +5,15 @@ import com.badlogic.gdx.graphics.g2d.Animation;
 public class Myhero {
     MyAnimation heroAnimation;
     private boolean dir;
+    private  boolean isCanJump = true;
+
+    public boolean isCanJump() {
+        return isCanJump;
+    }
+
+    public void setCanJump(boolean canJump) {
+        isCanJump = canJump;
+    }
 
     public boolean getDir() {
         return dir;
@@ -22,7 +31,7 @@ public class Myhero {
     }
 
     public void jump() {
-        heroAnimation = new MyAnimation("atlas/unnamed.atlas", "jump", Animation.PlayMode.NORMAL);
+        heroAnimation = new MyAnimation("atlas/unnamed.atlas", "jump", Animation.PlayMode.LOOP);
     }
 
     public void bite() {
