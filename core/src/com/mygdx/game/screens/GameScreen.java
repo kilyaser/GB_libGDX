@@ -24,7 +24,9 @@ import com.mygdx.game.MyAnimation;
 import com.mygdx.game.Myhero;
 import com.mygdx.game.PhysX;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 
 
 public class GameScreen implements Screen {
@@ -45,8 +47,10 @@ public class GameScreen implements Screen {
     private Body body;
     private final Rectangle heroRect;
     private  float width;
+    public static ArrayList<Body> bodies;
 
     public GameScreen(Main game) {
+        bodies = new ArrayList<>();
         this.game = game;
         batch = new SpriteBatch();
         shapeRenderer = new ShapeRenderer();
@@ -88,7 +92,7 @@ public class GameScreen implements Screen {
         if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
             body.applyForceToCenter(new Vector2(-1000, 0), true);
             myhero.run();
-            myhero.setDir(true);
+            myhero.setDir(false);
 
             if(heroRect.width == width) {
                 heroRect.width += 50;
@@ -100,11 +104,11 @@ public class GameScreen implements Screen {
                 heroRect.width += 50;
             }
 
-        } else if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
-           if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE)) {
-                body.applyForceToCenter(new Vector2(1000, 2000), true);
-                myhero.jump();
-            }
+        } else if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE) && myhero.isCanJump()) {
+               body.applyForceToCenter(new Vector2(1000, 100000000), true);
+               myhero.jump();
+
+
         }  else {
             myhero.stay();
             if(heroRect.width == (heroRect.width + 50)) {
@@ -142,6 +146,14 @@ public class GameScreen implements Screen {
 
         physX.step();
         physX.debugDraw(camera);
+        if (bodies.size() > 0) {
+            for (int i = 0; i < bodies.size(); i++) {
+                myhero.setCanJump(false);
+            }
+        } else {
+            myhero.setCanJump(true);
+        }
+
 
     }
 

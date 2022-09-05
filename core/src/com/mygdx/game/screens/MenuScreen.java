@@ -4,6 +4,8 @@ package com.mygdx.game.screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -21,6 +23,8 @@ public class MenuScreen implements Screen {
     //private final TextureAtlas atlas;
     private Rectangle startRect;
     private ShapeRenderer shapeRenderer;
+    private final Music music;
+    private final Sound sound;
 
     public MenuScreen(Main game){
         this.game = game;
@@ -29,6 +33,12 @@ public class MenuScreen implements Screen {
         //atlas = new TextureAtlas("atlas/unnamed.atlas");
         startRect = new Rectangle(0, 0, 100, 50);
         shapeRenderer = new ShapeRenderer();
+
+        music = Gdx.audio.newMusic(Gdx.files.internal("borislav-slavov-rivellon.mp3"));
+        music.setLooping(true);
+        music.play();
+
+        sound = Gdx.audio.newSound(Gdx.files.internal("voi-odinochnyii-dalekii-priglushennyii.mp3"));
 
     }
     @Override
@@ -55,6 +65,8 @@ public class MenuScreen implements Screen {
             if (startRect.contains(x, y)) {
                 dispose();
                 game.setScreen(new GameScreen(game));
+            } else {
+                sound.play();
             }
        }
 
@@ -85,6 +97,8 @@ public class MenuScreen implements Screen {
         this.batch.dispose();
         this.img.dispose();
         this.shapeRenderer.dispose();
+        this.music.dispose();
+        this.sound.dispose();
        // this.atlas.dispose();
     }
 }

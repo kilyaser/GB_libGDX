@@ -10,9 +10,11 @@ public class PhysX {
 
     private final World world;
     private final Box2DDebugRenderer dDebugRenderer;
+    private final int PPM = 1;
 
     public PhysX() {
-        this.world = new World(new Vector2(0, -9.81f), true);
+        world = new World(new Vector2(0, -9.81f), true);
+        world.setContactListener(new MyContList());
         this.dDebugRenderer = new Box2DDebugRenderer();
     }
 
@@ -39,7 +41,14 @@ public class PhysX {
 //        world.createBody(def).createFixture(fixtureDef).setUserData("стена");
         Body body;
         body = world.createBody(def);
-        body.createFixture(fixtureDef).setUserData("cтена");
+        String name = object.getName();
+        body.createFixture(fixtureDef).setUserData(name);
+        if (name != null && name.equals("hero")) {
+            polygonShape.setAsBox(rec.width/12/PPM, rec.height/12/PPM, new Vector2(0, -rec.width/2/PPM), 0);
+            body.createFixture(fixtureDef).setUserData("foots");
+            body.getFixtureList().get(body.getFixtureList().size - 1).setSensor(true);
+        }
+
         polygonShape.dispose();
         return body;
     }
