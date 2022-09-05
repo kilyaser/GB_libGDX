@@ -10,11 +10,13 @@ public class PhysX {
 
     private final World world;
     private final Box2DDebugRenderer dDebugRenderer;
-    private final int PPM = 1;
+    public static final float PPM = 100;
+    public final MyContList myContList;
 
     public PhysX() {
         world = new World(new Vector2(0, -9.81f), true);
-        world.setContactListener(new MyContList());
+        myContList = new MyContList();
+        world.setContactListener(myContList);
         this.dDebugRenderer = new Box2DDebugRenderer();
     }
 
@@ -29,10 +31,10 @@ public class PhysX {
         if (type.equals("StaticBody")) def.type = BodyDef.BodyType.StaticBody;
         if (type.equals("DynamicBody")) def.type = BodyDef.BodyType.DynamicBody;
 
-        def.position.set(rec.x + rec.width/2, rec.y + rec.height/2);
+        def.position.set((rec.x + rec.width / 2) / PPM, (rec.y + rec.height / 2) / PPM);
         def.gravityScale = (float) object.getProperties().get("gravityScale");  // отношение к гравитации
 
-        polygonShape.setAsBox(rec.width/2, rec.height/2);
+        polygonShape.setAsBox(rec.width / 2 / PPM, rec.height / 2 / PPM);
         fixtureDef.shape = polygonShape;
         fixtureDef.friction = 0; //  cкольжение
         fixtureDef.density = (float) object.getProperties().get("density");;    // плотность
@@ -44,7 +46,7 @@ public class PhysX {
         String name = object.getName();
         body.createFixture(fixtureDef).setUserData(name);
         if (name != null && name.equals("hero")) {
-            polygonShape.setAsBox(rec.width/12/PPM, rec.height/12/PPM, new Vector2(0, -rec.width/2/PPM), 0);
+            polygonShape.setAsBox(rec.width / 3 / PPM, rec.height / 12 / PPM, new Vector2(0, -rec.width / 2 / PPM), 0);
             body.createFixture(fixtureDef).setUserData("foots");
             body.getFixtureList().get(body.getFixtureList().size - 1).setSensor(true);
         }
