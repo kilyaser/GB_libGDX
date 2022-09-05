@@ -90,30 +90,25 @@ public class GameScreen implements Screen {
 		if(!myhero.getAnimation().getFrame().isFlipX()) myhero.getAnimation().getFrame().flip(myhero.getDir(), false);
 
         if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
-            body.applyForceToCenter(new Vector2(-1000, 0), true);
+            body.applyForceToCenter(new Vector2(-7, 0), true);
             myhero.run();
-            myhero.setDir(false);
+            //myhero.setDir(false);
 
             if(heroRect.width == width) {
                 heroRect.width += 50;
             }
         } else if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
-            body.applyForceToCenter(new Vector2(1000, 0), true);
+            body.applyForceToCenter(new Vector2(7, 0), true);
             myhero.run();
-            if(heroRect.width == width) {
-                heroRect.width += 50;
-            }
+            //myhero.setDir(true);
 
-        } else if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE) && myhero.isCanJump()) {
-               body.applyForceToCenter(new Vector2(1000, 100000000), true);
+        } else if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE) && physX.myContList.isOnGround()) {
+               body.applyForceToCenter(new Vector2(0, 250), true);
                myhero.jump();
 
 
         }  else {
             myhero.stay();
-            if(heroRect.width == (heroRect.width + 50)) {
-                heroRect.width -= 50;
-            }
 
         }
         if (Gdx.input.isKeyPressed(Input.Keys.UP)) camera.position.y += STEP;
@@ -123,14 +118,17 @@ public class GameScreen implements Screen {
         if(Gdx.input.isKeyPressed(Input.Keys.P)) camera.zoom += 0.1f;
         if(Gdx.input.isKeyPressed(Input.Keys.O) && camera.zoom > 0) camera.zoom -= 0.1f;
 
-        camera.position.x = body.getPosition().x;
-        camera.position.y = body.getPosition().y;
+        camera.position.x = body.getPosition().x * PhysX.PPM;
+        camera.position.y = body.getPosition().y * PhysX.PPM;
 
         camera.update();
         ScreenUtils.clear(Color.BROWN);
-        batch.setProjectionMatrix(camera.combined);
+//        batch.setProjectionMatrix(camera.combined);
+
+        float x = Gdx.graphics.getWidth() / 2 - heroRect.getWidth()/2/camera.zoom;
+        float y = Gdx.graphics.getHeight() / 2 - heroRect.getHeight()/2/camera.zoom;
         batch.begin();
-        batch.draw(myhero.getAnimation().getFrame(), camera.position.x - 50, camera.position.y - 50, heroRect.width , heroRect.height);
+        batch.draw(myhero.getAnimation().getFrame(), x, y);
         batch.end();
         mapRenderer.setView(camera);
 

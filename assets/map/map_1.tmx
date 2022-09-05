@@ -46,7 +46,7 @@
     <property name="BodyType" value="DynamicBody"/>
     <property name="density" type="float" value="0"/>
     <property name="friction" type="float" value="0.5"/>
-    <property name="gravityScale" type="float" value="50"/>
+    <property name="gravityScale" type="float" value="1"/>
     <property name="restitution" type="float" value="0"/>
    </properties>
   </object>
@@ -60,7 +60,7 @@
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="density" type="float" value="0"/>
-    <property name="friction" type="float" value="0"/>
+    <property name="friction" type="float" value="0.5"/>
     <property name="gravityScale" type="float" value="1"/>
     <property name="restitution" type="float" value="0"/>
    </properties>
@@ -69,7 +69,7 @@
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="density" type="float" value="0"/>
-    <property name="friction" type="float" value="0"/>
+    <property name="friction" type="float" value="0.5"/>
     <property name="gravityScale" type="float" value="1"/>
     <property name="restitution" type="float" value="0"/>
    </properties>
@@ -78,7 +78,7 @@
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="density" type="float" value="0"/>
-    <property name="friction" type="float" value="0"/>
+    <property name="friction" type="float" value="0.5"/>
     <property name="gravityScale" type="float" value="1"/>
     <property name="restitution" type="float" value="0"/>
    </properties>
@@ -87,7 +87,7 @@
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="density" type="float" value="0"/>
-    <property name="friction" type="float" value="0"/>
+    <property name="friction" type="float" value="0.5"/>
     <property name="gravityScale" type="float" value="1"/>
     <property name="restitution" type="float" value="0"/>
    </properties>
@@ -96,7 +96,7 @@
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="density" type="float" value="0"/>
-    <property name="friction" type="float" value="0"/>
+    <property name="friction" type="float" value="0.5"/>
     <property name="gravityScale" type="float" value="1"/>
     <property name="restitution" type="float" value="0"/>
    </properties>
@@ -114,7 +114,7 @@
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="density" type="float" value="0"/>
-    <property name="friction" type="float" value="0"/>
+    <property name="friction" type="float" value="0.5"/>
     <property name="gravityScale" type="float" value="1"/>
     <property name="restitution" type="float" value="0"/>
    </properties>
@@ -123,7 +123,7 @@
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="density" type="float" value="0"/>
-    <property name="friction" type="float" value="0"/>
+    <property name="friction" type="float" value="0.5"/>
     <property name="gravityScale" type="float" value="1"/>
     <property name="restitution" type="float" value="0"/>
    </properties>
@@ -132,7 +132,7 @@
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="density" type="float" value="0"/>
-    <property name="friction" type="float" value="0"/>
+    <property name="friction" type="float" value="0.5"/>
     <property name="gravityScale" type="float" value="1"/>
     <property name="restitution" type="float" value="0"/>
    </properties>
@@ -150,7 +150,7 @@
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="density" type="float" value="0"/>
-    <property name="friction" type="float" value="0"/>
+    <property name="friction" type="float" value="0.5"/>
     <property name="gravityScale" type="float" value="1"/>
     <property name="restitution" type="float" value="0"/>
    </properties>
@@ -159,7 +159,7 @@
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="density" type="float" value="0"/>
-    <property name="friction" type="float" value="0"/>
+    <property name="friction" type="float" value="0.5"/>
     <property name="gravityScale" type="float" value="1"/>
     <property name="restitution" type="float" value="0"/>
    </properties>
@@ -168,7 +168,7 @@
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="density" type="float" value="0"/>
-    <property name="friction" type="float" value="0"/>
+    <property name="friction" type="float" value="0.5"/>
     <property name="gravityScale" type="float" value="1"/>
     <property name="restitution" type="float" value="0"/>
    </properties>
@@ -177,7 +177,7 @@
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="density" type="float" value="0"/>
-    <property name="friction" type="float" value="0"/>
+    <property name="friction" type="float" value="0.5"/>
     <property name="gravityScale" type="float" value="1"/>
     <property name="restitution" type="float" value="0"/>
    </properties>
@@ -195,7 +195,7 @@
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="density" type="float" value="0"/>
-    <property name="friction" type="float" value="0"/>
+    <property name="friction" type="float" value="0.5"/>
     <property name="gravityScale" type="float" value="1"/>
     <property name="restitution" type="float" value="0"/>
    </properties>
@@ -204,7 +204,7 @@
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="density" type="float" value="0"/>
-    <property name="friction" type="float" value="0"/>
+    <property name="friction" type="float" value="0.5"/>
     <property name="gravityScale" type="float" value="1"/>
     <property name="restitution" type="float" value="0"/>
    </properties>
@@ -213,7 +213,7 @@
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="density" type="float" value="0"/>
-    <property name="friction" type="float" value="0"/>
+    <property name="friction" type="float" value="0.5"/>
     <property name="gravityScale" type="float" value="1"/>
     <property name="restitution" type="float" value="0"/>
    </properties>
@@ -222,7 +222,7 @@
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="density" type="float" value="0"/>
-    <property name="friction" type="float" value="0"/>
+    <property name="friction" type="float" value="0.5"/>
     <property name="gravityScale" type="float" value="1"/>
     <property name="restitution" type="float" value="0"/>
    </properties>
@@ -231,7 +231,7 @@
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="density" type="float" value="0"/>
-    <property name="friction" type="float" value="0"/>
+    <property name="friction" type="float" value="0.5"/>
     <property name="gravityScale" type="float" value="1"/>
     <property name="restitution" type="float" value="0"/>
    </properties>
@@ -240,7 +240,7 @@
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="density" type="float" value="0"/>
-    <property name="friction" type="float" value="0"/>
+    <property name="friction" type="float" value="0.5"/>
     <property name="gravityScale" type="float" value="1"/>
     <property name="restitution" type="float" value="0"/>
    </properties>
@@ -249,7 +249,7 @@
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="density" type="float" value="0"/>
-    <property name="friction" type="float" value="0"/>
+    <property name="friction" type="float" value="0.5"/>
     <property name="gravityScale" type="float" value="1"/>
     <property name="restitution" type="float" value="0"/>
    </properties>
@@ -258,7 +258,7 @@
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="density" type="float" value="0"/>
-    <property name="friction" type="float" value="0"/>
+    <property name="friction" type="float" value="0.5"/>
     <property name="gravityScale" type="float" value="1"/>
     <property name="restitution" type="float" value="0"/>
    </properties>
@@ -267,7 +267,7 @@
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="density" type="float" value="0"/>
-    <property name="friction" type="float" value="0"/>
+    <property name="friction" type="float" value="0.5"/>
     <property name="gravityScale" type="float" value="1"/>
     <property name="restitution" type="float" value="0"/>
    </properties>
@@ -276,7 +276,7 @@
    <properties>
     <property name="BodyType" value="StaticBody"/>
     <property name="density" type="float" value="0"/>
-    <property name="friction" type="float" value="0"/>
+    <property name="friction" type="float" value="0.5"/>
     <property name="gravityScale" type="float" value="1"/>
     <property name="restitution" type="float" value="0"/>
    </properties>
